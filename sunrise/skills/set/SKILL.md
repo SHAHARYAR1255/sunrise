@@ -1,9 +1,9 @@
 ---
 name: set
-description: Set or change the local time your Claude 5-hour usage window starts each day, by creating a cloud routine that primes it. Use when the user runs /window-primer:set, or asks to set, prime, anchor, or schedule their session start time or window reset time.
+description: Set or change the local time your Claude 5-hour usage window starts each day, by creating a cloud routine that primes it. Use when the user runs /sunrise:set, or asks to set, prime, anchor, or schedule their session start time or window reset time.
 ---
 
-# window-primer: set your session start time
+# sunrise: set your session start time
 
 The user wants their Claude **5-hour usage window** to start at a chosen local time each day, so resets land predictably. You achieve this by creating a **cloud routine** (the same thing the built-in `/schedule` creates) that sends one tiny no-op message four times a day, five hours apart. Each message starts or refreshes the 5-hour window, keeping it primed.
 
@@ -38,13 +38,13 @@ Ask them to confirm. If they decline, stop and change nothing.
 
 ## 4. Create (or update) the routine
 Invoke the built-in **`schedule`** skill (the `/schedule` routine creator) to make a **recurring** cloud routine with exactly these parameters:
-- **name:** `window-primer`
+- **name:** `sunrise`
 - **schedule:** every day at T1, T2, T3, T4 **local** time. (The routine system converts local to a UTC cron. A single cron `MINUTE H1,H2,H3,H4 * * *` in UTC works, since all four pings share one minute.)
 - **model:** `claude-haiku-4-5` (cheapest — this run does nothing).
 - **git repositories / sources:** none. This routine performs no work and needs no repo.
 - **prompt:** `Output exactly: ok. Do not read files, run commands, use tools, or change anything. Then stop.`
 
-**Idempotency:** First check the user's existing routines (the `schedule` list capability). If a routine named `window-primer` already exists, **update** that one's schedule instead of creating a duplicate.
+**Idempotency:** First check the user's existing routines (the `schedule` list capability). If a routine named `sunrise` already exists, **update** that one's schedule instead of creating a duplicate.
 
 **Eligibility:** If the routine system reports the user is not eligible (routines unavailable, or not on Pro/Max), tell them plainly that this feature requires a Claude Pro or Max plan with Claude Code routines enabled, and stop — don't retry in a loop.
 
@@ -52,6 +52,6 @@ Invoke the built-in **`schedule`** skill (the `/schedule` routine creator) to ma
 Confirm it's live and show:
 - The local ping times (T1–T4) and the resulting reset times.
 - The manage/route link returned by the routine system (e.g. the `claude.ai/code/routines/...` URL).
-- How to change it later: run `/window-primer:set <new time>` again (it updates the same routine). To turn it off, pause or delete the routine at https://claude.ai/code/routines.
+- How to change it later: run `/sunrise:set <new time>` again (it updates the same routine). To turn it off, pause or delete the routine at https://claude.ai/code/routines.
 
 Keep the final summary short.

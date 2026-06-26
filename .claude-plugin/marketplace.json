@@ -1,18 +1,18 @@
 {
-  "name": "smalikdev",
+  "name": "shaharyar1255",
   "owner": {
-    "name": "smalikdev"
+    "name": "shaharyar1255"
   },
   "metadata": {
-    "description": "smalikdev's Claude Code plugins"
+    "description": "shaharyar1255's Claude Code plugins"
   },
   "plugins": [
     {
-      "name": "window-primer",
-      "source": "./window-primer",
+      "name": "sunrise",
+      "source": "./sunrise",
       "description": "Set the time your Claude 5-hour usage window starts each day. Creates a tiny cloud routine that primes your window on a schedule you choose, so resets land when you want them.",
       "version": "0.1.0",
-      "author": { "name": "smalikdev" },
+      "author": { "name": "shaharyar1255" },
       "category": "productivity",
       "tags": ["usage", "limits", "5-hour", "session", "routine", "productivity"]
     }
