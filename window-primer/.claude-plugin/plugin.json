@@ -1,0 +1,9 @@
+{
+  "name": "window-primer",
+  "description": "Set the time your Claude 5-hour usage window starts each day. /window-primer:set <time> creates a tiny cloud routine that primes your window so resets stay predictable.",
+  "version": "0.1.0",
+  "author": { "name": "smalikdev" },
+  "homepage": "https://github.com/smalikdev/window-primer",
+  "repository": "https://github.com/smalikdev/window-primer",
+  "license": "MIT"
+}
