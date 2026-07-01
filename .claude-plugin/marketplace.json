@@ -11,7 +11,7 @@
       "name": "sunrise",
       "source": "./sunrise",
       "description": "Set the time your Claude 5-hour usage window starts each day. Creates a tiny cloud routine that primes your window on a schedule you choose, so resets land when you want them.",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "author": { "name": "shaharyar1255" },
       "category": "productivity",
       "tags": ["usage", "limits", "5-hour", "session", "routine", "productivity"]

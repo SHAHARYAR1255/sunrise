@@ -40,7 +40,7 @@ Ask them to confirm. If they decline, stop and change nothing.
 Invoke the built-in **`schedule`** skill (the `/schedule` routine creator) to make a **recurring** cloud routine with exactly these parameters:
 - **name:** `sunrise`
 - **schedule:** every day at T1, T2, T3, T4 **local** time. (The routine system converts local to a UTC cron. A single cron `MINUTE H1,H2,H3,H4 * * *` in UTC works, since all four pings share one minute.)
-- **model:** `claude-haiku-4-5` (cheapest — this run does nothing).
+- **model:** `claude-opus-4-8` — must be a heavy model. Lighter models like **Haiku do NOT anchor the 5-hour usage window** (the window silently never starts); Opus does. The prompt is trivial, so the cost is ~one token regardless of model.
 - **git repositories / sources:** none. This routine performs no work and needs no repo.
 - **prompt:** `Output exactly: ok. Do not read files, run commands, use tools, or change anything. Then stop.`
 

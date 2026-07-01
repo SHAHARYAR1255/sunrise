@@ -31,7 +31,7 @@ Pick the hour your day starts. The plugin computes a 4×/day schedule (for `9am`
 
 ## How it works
 
-A Claude Code plugin **can't run on a timer** — its commands and hooks only fire while Claude is open. So this plugin doesn't *do* the priming itself. It sets up a **cloud routine**, which runs 24/7 on Anthropic's infrastructure even with your machine off. The routine just sends `ok` to Haiku — enough to start a window.
+A Claude Code plugin **can't run on a timer** — its commands and hooks only fire while Claude is open. So this plugin doesn't *do* the priming itself. It sets up a **cloud routine**, which runs 24/7 on Anthropic's infrastructure even with your machine off. The routine just sends `ok` to Opus — enough to start a window. (It must be Opus, not a lighter model like Haiku; lighter models don't anchor the 5-hour window.)
 
 - 4 pings/day, 5h apart → window primed ~20h/day, with one unavoidable ~4h gap parked overnight.
 - Uses ~4 of your 15 daily routine runs.
